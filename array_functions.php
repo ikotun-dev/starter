@@ -27,6 +27,26 @@ $arr2 = [4, 5, 7, 8];
 $arr3 = array_merge($arr1, $arr2);
 
 //spread operator like js
-$arr4 = [...$arr1, ...$arr2]
+$arr4 = [...$arr1, ...$arr2];
+
+ //combining array (1 for key) (2 for value )
+ $c = array_combine($arr1, $arr2);
+
+ //flip, switch kiss and values 
+
+ $numbers = range(1, 20);
+
+
+ //create a new array using array map
+ $new_numbers = array_map(function($number){
+    return "Number ${number}";},  $numbers
+ );
+    //filter away
+$lessThan10 = array_filter($numbers, fn($number) => $number <=10);
+
+//array reduce 
+$sum = array_reduce($numbers, fn($carry, $number) => $carry + $number);
+var_dump($num)
+
 
 ?>
