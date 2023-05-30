@@ -1,13 +1,14 @@
 <?php
 
 if(isset($_POST['submit'])){
-echo $_POST['name'];
-echo $_POST['age'];
+    $name = htmlspecialchars($_POST['name']);
+    $age = filter_input(INPUT_POST, 'age', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+  
 }
 
 ?>
 
-<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST">
     <div>
         <label for="name">Name : </label>
         <input type="text" name="name">
